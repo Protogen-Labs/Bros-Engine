@@ -1,7 +1,5 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using System;
 
 namespace BrosEngine;
 
@@ -27,8 +25,8 @@ class Engine : Game {
         return this;
     }
 
-    public Sprite createSprite() {
-        return new Sprite(this);
+    public Sprite createSprite(string fileName) {
+        return new Sprite(this, fileName);
     }
 
     public void SetGameLogic(Action logic) {
@@ -50,7 +48,7 @@ class Engine : Game {
     }
 
     protected override void LoadContent() {
-
+        
     }
 
     protected override void Update(GameTime gameTime) {
