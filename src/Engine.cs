@@ -23,7 +23,7 @@ class Engine : Game {
     }
 
     public Engine Init() {
-        Run();
+        new Thread(new ThreadStart(Run)).Start();
         return this;
     }
 
