@@ -1,32 +1,60 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace BrosEngine;
 
 class Engine : Game {
-    private GraphicsDeviceManager? graphics;
-    private SpriteBatch? spriteBatch;
 
-    public Engine() {
-        graphics = new GraphicsDeviceManager(this);
+    private GraphicsDeviceManager? Graphics;
+
+    private string title;
+
+    private Action GameLogic = () => {
+        Console.WriteLine("No game logic set!");
+    };
+
+    public Engine(string title) {
+        Graphics = new GraphicsDeviceManager(this);
+        this.title = title;
         Content.RootDirectory = "Content";
         IsMouseVisible = true;
     }
 
+    public Engine Init() {
+        Run();
+        return this;
+    }
+
+    public Sprite createSprite() {
+        return new Sprite(this);
+    }
+
+    public void SetGameLogic(Action logic) {
+        GameLogic = logic;
+    }
+
     protected override void Initialize() {
+        System.Console.WriteLine("=============================");
+        System.Console.WriteLine("== Initializing BrosEngine ==");
+        System.Console.WriteLine("=============================");
+
+        Window.Title = title;
+
         base.Initialize();
+
+        System.Console.WriteLine("============================");
+        System.Console.WriteLine("== Initialized BrosEngine ==");
+        System.Console.WriteLine("============================");
     }
 
     protected override void LoadContent() {
-        spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        
     }
 
     protected override void Update(GameTime gameTime) {
-        if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-            Exit();
+        GameLogic();
 
         base.Update(gameTime);
     }
