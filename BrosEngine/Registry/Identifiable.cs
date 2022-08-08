@@ -14,5 +14,5 @@ class IdentifiableString {
     public string GetOwner() => Owner;
     public string GetValue() => Value;
 
-    public override string ToString() => Owner + ":"+ Value;
+    public override string ToString() => Owner + ":" + Value;
 }

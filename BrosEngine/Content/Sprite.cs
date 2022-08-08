@@ -4,8 +4,7 @@ namespace BrosEngine.Content;
 
 class Sprite {
     public readonly Engine Engine;
-    public Sprite(Engine engine, string fileName) {
+    public Sprite(Engine engine) {
         Engine = engine;
-        Engine.Content.Load<Texture2D>(fileName);
     }
 }

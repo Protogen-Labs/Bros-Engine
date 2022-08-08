@@ -28,7 +28,7 @@ class Engine : Game {
     }
 
     public Sprite createSprite(string fileName) {
-        return new Sprite(this, fileName);
+        return new Sprite(this);
     }
 
     public void SetGameLogic(Action logic) {
