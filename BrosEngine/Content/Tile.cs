@@ -28,8 +28,7 @@ interface Tile {
 class ActiveTile {
     public Tile Tile;
 
-    public ActiveTile(Tile tile) {
+    public ActiveTile(Tile tile, Engine engine) {
         Tile = tile;
     }
-    
 }

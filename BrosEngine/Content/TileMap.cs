@@ -5,12 +5,12 @@ namespace BrosEngine.Content;
 
 class TileMap {
 
-    public TileMap() {
+    public TileMap(Engine engine) {
         
     }
 
     public void Render(Engine engine, float x, float y, float z) {
-        float totalY = y + z;
+        float totalY = -y + z;
         
     }
 }
