@@ -3,7 +3,17 @@ using Microsoft.Xna.Framework;
 
 namespace BrosEngine.Content;
 
+enum Side {
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT,
+    FRONT,
+    BACK
+}
+
 interface Tile {
+    Side[] GetSolidSides(ActiveTile tile);
     bool IsFluid(ActiveTile tile);
     bool IsSolid(ActiveTile tile);
     void OnDig(ActiveTile tile);
@@ -23,7 +33,11 @@ class ActiveTile {
 }
 
 class TileMap {
-    public TileMap() {}
+
+    private ActiveTile[][][] tiles;
+    public TileMap() {
+        tiles = new ActiveTile[][][] {};
+    }
 
     public void Render(Engine engine, float x, float y, float z) {
         float totalY = y + z;
