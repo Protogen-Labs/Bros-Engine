@@ -8,6 +8,4 @@ class Sprite {
         Engine = engine;
         Engine.Content.Load<Texture2D>(fileName);
     }
-
-
 }

@@ -1,28 +1,21 @@
 using BrosEngine.Content;
+using BrosEngine.Exception.Registry;
 
 namespace BrosEngine.Registry;
 
-class IdentifiableString {
-    private readonly string Owner;
-    private readonly string Value;
-
-    public IdentifiableString(string owner, string value) {
-        Owner = owner;
-        Value = value;
-    }
-
-    public string GetOwner() => Owner;
-    public string GetValue() => Value;
+class BuiltinRegistries {
+    public static readonly ContentRegistry<Tile> TILES = new ContentRegistry<Tile>();
 }
 
 class ContentRegistry<T> {
-    #region predefined registries
-        public static readonly ContentRegistry<Tile> TILE = new ContentRegistry<Tile>();
-    #endregion
 
-    private Dictionary<IdentifiableString, T> registry = new Dictionary<IdentifiableString, T>();
+    private Dictionary<IdentifiableString, T> Registry = new Dictionary<IdentifiableString, T>();
 
-    public ContentRegistry() {
-        
+    public ContentRegistry() {}
+
+    public T Register(IdentifiableString id, T value) {
+        if (Registry[id] != null) throw new RegistrySpotTakenException<T>(this, id);
+        Registry[id] = value;
+        return value;
     }
 }
