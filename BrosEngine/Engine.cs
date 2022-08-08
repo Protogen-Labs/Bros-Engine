@@ -6,7 +6,8 @@ namespace BrosEngine;
 
 class Engine : Game {
 
-    private GraphicsDeviceManager? Graphics;
+    private GraphicsDeviceManager Graphics;
+    public SpriteBatch? SpriteBatch;
 
     private string title;
 
@@ -49,7 +50,7 @@ class Engine : Game {
     }
 
     protected override void LoadContent() {
-        
+        SpriteBatch = new SpriteBatch(GraphicsDevice);
     }
 
     protected override void Update(GameTime gameTime) {
