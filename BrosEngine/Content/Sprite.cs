@@ -1,6 +1,6 @@
 using Microsoft.Xna.Framework.Graphics;
 
-namespace BrosEngine;
+namespace BrosEngine.Content;
 
 class Sprite {
     public readonly Engine Engine;
