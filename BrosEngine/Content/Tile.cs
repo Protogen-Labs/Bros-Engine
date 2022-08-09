@@ -32,3 +32,15 @@ class ActiveTile {
         Tile = tile;
     }
 }
+
+class TilePos {
+    public int X;
+    public int Y;
+    public int Z;
+
+    public TilePos(int x, int y, int z) {
+        X = x;
+        Y = y;
+        Z = z;
+    }
+}
