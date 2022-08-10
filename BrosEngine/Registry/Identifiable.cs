@@ -2,7 +2,7 @@
 
 namespace BrosEngine.Registry;
 
-class IdentifiableString {
+public class IdentifiableString {
     private readonly string Owner;
     private readonly string Value;
 

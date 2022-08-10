@@ -4,7 +4,7 @@ using BrosEngine.Content;
 
 namespace BrosEngine;
 
-class Engine : Game {
+public class Engine : Game {
 
     private GraphicsDeviceManager Graphics;
     public SpriteBatch? SpriteBatch;

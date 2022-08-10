@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace BrosEngine.Content;
 
-class TileMap {
+public class TileMap {
     public Tile BackgroundTile;
     public Dictionary<TilePos, ActiveTile> Tiles = new Dictionary<TilePos, ActiveTile>();
     private readonly Engine Engine;

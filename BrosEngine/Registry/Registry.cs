@@ -3,11 +3,11 @@ using BrosEngine.Exception.Registry;
 
 namespace BrosEngine.Registry;
 
-class BuiltinRegistries {
+public class BuiltinRegistries {
     public static readonly ContentRegistry<Tile> TILES = new ContentRegistry<Tile>();
 }
 
-class ContentRegistry<T> {
+public class ContentRegistry<T> {
 
     private Dictionary<IdentifiableString, T> Registry = new Dictionary<IdentifiableString, T>();
 

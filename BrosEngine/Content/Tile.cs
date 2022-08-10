@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework;
 
 namespace BrosEngine.Content;
 
-enum Side {
+public enum Side {
     UP,
     DOWN,
     LEFT,
@@ -12,7 +12,7 @@ enum Side {
     BACK
 }
 
-interface Tile {
+public interface Tile {
     Side[] GetSolidSides(ActiveTile tile);
     bool IsFluid(ActiveTile tile);
     bool IsSolid(ActiveTile tile);
@@ -25,7 +25,7 @@ interface Tile {
     Texture2D GetTexture(ActiveTile tile);
 }
 
-class ActiveTile {
+public class ActiveTile {
     public Tile Tile;
 
     public ActiveTile(Tile tile, Engine engine) {
@@ -33,7 +33,7 @@ class ActiveTile {
     }
 }
 
-class TilePos {
+public class TilePos {
     public int X;
     public int Y;
     public int Z;
